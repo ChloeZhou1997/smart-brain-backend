@@ -40,6 +40,8 @@ app.get('/profile/:id', profile.handleProfileGet(database));
 // app.put('/image',(req,res)=>{image.handleImage(req,res,database)});
 app.put('/image',image.handleImage(database));
 
+app.post('/imageURL',image.handleApiCall)
+
 app.listen(3001, ()=>{
 	console.log('APP IS RUNNING !!!!!');
 })
