@@ -10,21 +10,20 @@ const image = require('./controllers/image');
 const knex = require('knex');
 const bcrypt = require('bcrypt-nodejs');
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
-const database = knex({
-	client: 'pg',
-	connection : {
-		connetionString: process.env.DATABASE_URL,
-		ssl:true
-	}
-});
-
-
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
+const database = knex({
+	client: 'pg',
+	connection : {
+		connetionString: process.env.DATABASE_URL,
+		ssl:false
+	}
+});
 
 
 app.get('/',(req,res)=>{
