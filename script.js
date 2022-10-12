@@ -9,13 +9,16 @@ const image = require('./controllers/image');
 
 const knex = require('knex');
 const bcrypt = require('bcrypt-nodejs');
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
 const database = knex({
 	client: 'pg',
-	connectionString: process.env.DATABASE_URL,
-  	ssl: {
-    	rejectUnauthorized: false
-  	}	
+	connection : {
+		connetionString: process.env.DATABASE_URL,
+		ssl:true
+	}
 });
+
 
 const app = express();
 
