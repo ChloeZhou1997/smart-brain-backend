@@ -11,12 +11,10 @@ const knex = require('knex');
 const bcrypt = require('bcrypt-nodejs');
 const database = knex({
 	client: 'pg',
-	connection:{
-		connectionString: 'process.env.DATABASE_URL',
-		ssl:{
-			rejectUnauthorized:false
-		}
-	}
+	connectionString: process.env.DATABASE_URL,
+  	ssl: {
+    	rejectUnauthorized: false
+  	}	
 });
 
 const app = express();
