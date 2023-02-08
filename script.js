@@ -20,7 +20,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 const database = knex({
 	client: 'pg',
 	connection : {
-		connetionString: process.env.DATABASE_URL,
+		connetionString: "postgres://face_recognition_db_uqd3_user:8qogOZzVz3PDPdJUC9wkMEZlCTsB88pf@dpg-cfi153hgp3jh03gn6nu0-a/face_recognition_db_uqd3",
 		ssl:false
 	}
 });
