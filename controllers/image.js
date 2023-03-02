@@ -35,8 +35,8 @@ const handleApiCall = (req,res) => {
 
 	fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
 	    .then(response => response.json())
-	    .then(response => res.json(response)).
-	    catch(err => res.status(400).json("unable to fetch the API"));
+	    .then(response => res.json(response))
+	    .catch(err => res.status(400).json("unable to fetch the API"));
 }
 
 
